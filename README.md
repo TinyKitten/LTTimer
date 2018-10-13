@@ -1,2 +1,2 @@
-# RamenTimer
-RamenTimer written with RxJS
+# LTTimer
+Lightning Talk time keeper

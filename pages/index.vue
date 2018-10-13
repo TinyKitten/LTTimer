@@ -8,7 +8,7 @@
         <a href="https://tinykitten.me" target="_blank" rel="noopener noreferrer">TinyKitten</a>
       </p>
       <p class="github">
-        <a href="https://github.com/TinyKitten/RamenTimer" target="_blank" rel="noopener noreferrer">Fork Me on GitHub</a>
+        <a href="https://github.com/TinyKitten/LTTimer" target="_blank" rel="noopener noreferrer">Fork Me on GitHub</a>
       </p>
     </footer>
   </section>

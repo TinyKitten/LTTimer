@@ -1,7 +1,7 @@
 {
-  "name": "ramen-timer",
+  "name": "lt-timer",
   "version": "1.0.0",
-  "description": "Ramen Timer written with RxJS",
+  "description": "Lightning Talk time keeper",
   "author": "TinyKitten <catwalk8205@gmail.com>",
   "private": true,
   "scripts": {

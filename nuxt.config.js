@@ -1,8 +1,8 @@
 const meta = {
-  title: 'RamenTimer',
-  description: 'ラーメンタイマー',
-  themeColor: '#e6b422',
-  url: 'https://ramen.tinykitten.me/',
+  title: 'LTTimer',
+  description: 'Lightning Talk time keeper',
+  themeColor: '#212121',
+  url: 'https://lttimer.tinykitten.me/',
   twitter: '@tinykitten8',
 };
 
