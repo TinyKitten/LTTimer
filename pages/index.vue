@@ -22,21 +22,14 @@ import AppTimer from '@/components/AppTimer.vue';
 import AppButton from '@/components/AppButton.vue';
 import AppTimeSelect from '@/components/AppTimeSelect.vue';
 
-import Bomb from '@/assets/bomb.mp3';
-
 export default {
   components: {
     AppTimer,
     AppButton,
     AppTimeSelect,
   },
-  data() {
-    return {
-      audio: null,
-    };
-  },
   computed: {
-    ...mapGetters(['started']),
+    ...mapGetters(['started', 'audio']),
   },
   watch: {
     started(flag) {
@@ -44,10 +37,6 @@ export default {
         this.onCompleted();
       }
     },
-  },
-  mounted() {
-    this.audio = new Audio(Bomb);
-    this.audio.load();
   },
   methods: {
     onCompleted() {

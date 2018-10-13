@@ -8,6 +8,7 @@
 
 <script>
 import { mapGetters } from 'vuex';
+import Bomb from '@/assets/bomb.mp3';
 
 export default {
   computed: {

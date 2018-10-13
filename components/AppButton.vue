@@ -1,19 +1,28 @@
 <template>
   <div>
-    <button v-if="!started" class="button" @click="start()">START</button>
+    <button v-if="!started" class="button" @click="_start()">START</button>
     <button v-else class="button" @click="stop()">STOP</button>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
+
+import Bomb from '@/assets/bomb.mp3';
 
 export default {
   computed: {
     ...mapGetters(['started']),
   },
   methods: {
+    ...mapMutations(['setAudio']),
     ...mapActions(['start', 'stop']),
+    _start() {
+      const audio = new Audio(Bomb);
+      audio.load();
+      this.setAudio(audio);
+      this.start();
+    },
   },
 };
 </script>
