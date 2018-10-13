@@ -46,6 +46,7 @@ export default {
     },
     playBomb() {
       const audio = new Audio(Bomb);
+      audio.load();
       audio.play();
     },
   },
