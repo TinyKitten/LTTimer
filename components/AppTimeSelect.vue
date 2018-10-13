@@ -20,11 +20,11 @@ export default {
   },
   methods: {
     ...mapMutations(['setTarget']),
-      onClick(num) {
+    onClick(num) {
       if (!this.started) {
         this.setTarget(num);
       }
-    }
+    },
   },
 };
 </script>

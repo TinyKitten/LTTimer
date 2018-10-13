@@ -30,6 +30,11 @@ export default {
     AppButton,
     AppTimeSelect,
   },
+  data() {
+    return {
+      audio: null,
+    };
+  },
   computed: {
     ...mapGetters(['started']),
   },
@@ -40,14 +45,13 @@ export default {
       }
     },
   },
+  mounted() {
+    this.audio = new Audio(Bomb);
+    this.audio.load();
+  },
   methods: {
     onCompleted() {
-      this.playBomb();
-    },
-    playBomb() {
-      const audio = new Audio(Bomb);
-      audio.load();
-      audio.play();
+      this.audio.play();
     },
   },
 };
