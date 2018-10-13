@@ -1,6 +1,7 @@
 <template>
   <section class="container">
     <app-timer />
+    <app-time-select />
     <app-button />
     <footer>
       <p class="credit">
@@ -19,6 +20,7 @@ import { mapGetters } from 'vuex';
 
 import AppTimer from '@/components/AppTimer.vue';
 import AppButton from '@/components/AppButton.vue';
+import AppTimeSelect from '@/components/AppTimeSelect.vue';
 
 import Bomb from '@/assets/bomb.mp3';
 
@@ -26,6 +28,7 @@ export default {
   components: {
     AppTimer,
     AppButton,
+    AppTimeSelect,
   },
   computed: {
     ...mapGetters(['started']),
@@ -51,7 +54,7 @@ export default {
 
 <style scoped>
 .container {
-  background: #e6b422;
+  background: #212121;
   display: flex;
   justify-content: center;
   align-items: center;

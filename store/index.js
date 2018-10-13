@@ -6,11 +6,13 @@ const store = () =>
   new Vuex.Store({
     state: {
       counter: 0,
+      target: 300,
       started: false,
       subscription: null,
     },
     getters: {
       counter: state => state.counter,
+      target: state => state.target,
       started: state => state.started,
       subscription: state => state.subscription,
     },
@@ -30,15 +32,18 @@ const store = () =>
       setSubscription(state, sub) {
         state.subscription = sub;
       },
+      setTarget(state, time) {
+        state.target = time;
+      },
     },
     actions: {
-      start({ commit }) {
+      start({ getters, commit }) {
         commit('setStarted', true);
         const numbers = interval(1000);
-        const obs = numbers.pipe(take(180));
+        const obs = numbers.pipe(take(getters.target));
         const sub = obs.subscribe(n => {
           commit('increment');
-          if (n === 179) {
+          if (n === getters.target - 1) {
             commit('setStarted', false);
             commit('reset');
           }
