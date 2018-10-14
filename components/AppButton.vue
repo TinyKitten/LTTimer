@@ -18,6 +18,9 @@ export default {
     ...mapMutations(['setAudio']),
     ...mapActions(['start', 'stop']),
     _start() {
+      const preAudio = new Audio(Gong);
+      preAudio.load();
+      preAudio.play();
       const audio = new Audio(Gong);
       audio.load();
       this.setAudio(audio);
