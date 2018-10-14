@@ -8,7 +8,7 @@
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 
-import Bomb from '@/assets/bomb.mp3';
+import Gong from '@/assets/gong.wav';
 
 export default {
   computed: {
@@ -18,7 +18,7 @@ export default {
     ...mapMutations(['setAudio']),
     ...mapActions(['start', 'stop']),
     _start() {
-      const audio = new Audio(Bomb);
+      const audio = new Audio(Gong);
       audio.load();
       this.setAudio(audio);
       this.start();

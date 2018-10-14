@@ -81,7 +81,7 @@ module.exports = {
         });
       }
       config.module.rules.push({
-        test: /\.mp3$/i,
+        test: /\.(mp3|wav)$/i,
         loader: 'url-loader',
       });
     },
