@@ -28,10 +28,10 @@ const store = () =>
       setCompleted(state, flag) {
         state.completed = flag;
       },
-      increment(state) {
+      incrementCounter(state) {
         state.counter++;
       },
-      reset(state) {
+      resetCounter(state) {
         state.counter = 0;
       },
       setSubscription(state, sub) {
@@ -43,11 +43,15 @@ const store = () =>
     },
     actions: {
       start({ getters, commit }) {
+        if (getters.started) {
+          return;
+        }
+
         commit('setStarted', true);
         const numbers = interval(1000);
         const obs = numbers.pipe(take(getters.target));
         const sub = obs.subscribe(n => {
-          commit('increment');
+          commit('incrementCounter');
           if (n === getters.target - 1) {
             commit('setStarted', false);
             commit('reset');
@@ -59,7 +63,8 @@ const store = () =>
         const sub = getters.subscription;
         sub.unsubscribe();
         commit('setStarted', false);
-        commit('reset');
+        commit('resetCounter');
+        commit('setSubscription', null);
       },
     },
   });
